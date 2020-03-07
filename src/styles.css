@@ -97,6 +97,8 @@ span {
   border: none;
   margin: 0 5px 0 5px;
 
+  color: #FF6584;
+  font-weight: bold;
 }
 
 #start-stop {
