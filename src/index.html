@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="utf-8" />
-    <title> Codelab Pomodoro </title>
-    <script src="cron.js"></script>
-</head> 
-<body>
-    <h1> Hello Code </h1>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <title> Codelab Pomodoro </title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    </head> 
+    <body>
+        <img class="banner" src="../assets/banner01.png"/>
+        <h1> Time: </h1>
+
+        <div class="cards">
+            <div class="cards-items">
+                <div class="options">
+                    <input type="radio" id="flash" name="flash" value="flash">
+                    <h2>Flash</h2>
+                </div>
+                
+                <p>To study: <span>30m</span></p>
+                <p>Rest: <span>05m</span></p>
+            </div>
+            <div class="cards-items">
+                <div class="options">
+                    <input type="radio" id="medium" name="medium" value="medium">
+                    <h2>Medium</h2>
+                </div>
+                
+                <p>To study: <span>40m</span></p>
+                <p>Rest: <span>08m</span></p>
+            </div>
+            <div class="cards-items">
+                <div class="options">
+                    <input type="radio" id="hard" name="hard" value="hard">
+                    <h2>Hard</h2>
+                </div>
+                
+                <p>To study: <span>60m</span></p>
+                <p>Rest: <span>10m</span></p>
+            </div>
+            
+        </div>
+
+        <div class="repeat">
+            <span>Repeat for</span>
+            <input type="number"/>
+            <span>cycles</span>
+        </div>
+
+        <button id="start-stop">
+            <h3>Start</h3>
+        </button>
+
+        <script src="cron.js"></script>
+    </body>
 </html>
 
