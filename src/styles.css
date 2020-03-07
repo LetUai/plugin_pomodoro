@@ -96,8 +96,9 @@ span {
   border-radius: 3px;
   border: none;
   margin: 0 5px 0 5px;
-
+  text-align: center;
   color: #FF6584;
+  font-size: 15px;
   font-weight: bold;
 }
 
