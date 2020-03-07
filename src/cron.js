@@ -52,4 +52,45 @@ function sendMessage() {
 
 
 let start = document.getElementById("start-stop");
-start.addEventListener("click", sendMessage);
+//start.addEventListener("click", sendMessage);
+
+start.addEventListener("click", () => {
+    switchAlert()
+});
+
+function switchAlert() {
+
+    let timerInterval
+    Swal.fire({
+      title: 'Auto close alert!',
+      html: ' Time: <b></b>:<strong></strong> ',
+      timer: (2*60)*1000,
+      timerProgressBar: true,
+      allowOutsideClick: false,
+
+    onBeforeOpen: () => {
+        Swal.showLoading()
+        timerInterval = setInterval(() => {
+          const content = Swal.getContent()
+          if (content) {
+            const b = content.querySelector('b')
+            const strong = content.querySelector('strong')
+            if (b) {
+              b.textContent = Math.floor((Swal.getTimerLeft() / 1000)/60)
+              strong.textContent = Math.floor((Swal.getTimerLeft() % 6e4)/1000)
+            }
+          }
+        }, 100)
+    },
+
+    onClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('I was closed by the timer')
+      }
+    })
+
+}
