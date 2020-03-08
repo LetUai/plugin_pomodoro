@@ -33,7 +33,7 @@ async function getLevel( time, level)
 
    if(time > 0 && mim > 0 && pause > 0){
        //---------- numero de repetições ------------
-       for(var j  = 0; j <= time; j++){
+       for(var j  = 1; j <= time; j++){
            //--------- contador ---------
            if(j == time){
                alert('seu tempo de estudo acabou!')

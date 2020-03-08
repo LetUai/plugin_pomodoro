@@ -5,6 +5,7 @@
         <title> Codelab Pomodoro </title>
         <link rel="stylesheet" type="text/css" href="styles.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
     </head> 
     <body>
         <img class="banner" src="../assets/banner01.png"/>
@@ -13,7 +14,7 @@
         <div class="cards">
             <div class="cards-items">
                 <div class="options">
-                    <input type="radio" id="flash" name="flash" value="flash">
+                    <input checked type="radio" id="flash" name="flash" value="flash">
                     <h2>Flash</h2>
                 </div>
                 
@@ -43,15 +44,17 @@
 
         <div class="repeat">
             <span>Repeat for</span>
-            <input id="choice" type="number" value="0"/>
+            <input id="choice" type="number" value="1" min="1"/>
             <span>cycles</span>
         </div>
 
         <button id="start-stop">
+            <i class="fas fa-play"></i>
             <h3>Start</h3>
         </button>
 
         <script src="cron.js"></script>
+        <script src="services/sweetalert.js"></script>
     </body>
 </html>
 
