@@ -62,35 +62,65 @@ function switchAlert() {
 
     let timerInterval
     Swal.fire({
-      title: 'Auto close alert!',
+      title: 'Rest',
       html: ' Time: <b></b>:<strong></strong> ',
-      timer: (2*60)*1000,
+      imageUrl: '../assets/banner02.png',
+      timer: (2)*1000,
       timerProgressBar: true,
       allowOutsideClick: false,
+      allowEscapeKey: false,
+      showConfirmButton: false,
+      background: `
+        #212723
+      `,
+      backdrop: `
+        #FFFFFF60
+      `,
 
-    onBeforeOpen: () => {
-        Swal.showLoading()
-        timerInterval = setInterval(() => {
-          const content = Swal.getContent()
-          if (content) {
-            const b = content.querySelector('b')
-            const strong = content.querySelector('strong')
-            if (b) {
-              b.textContent = Math.floor((Swal.getTimerLeft() / 1000)/60)
-              strong.textContent = Math.floor((Swal.getTimerLeft() % 6e4)/1000)
+      onBeforeOpen: () => {
+          //Swal.showLoading()
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              const strong = content.querySelector('strong')
+              if (b) {
+                b.textContent = Math.floor((Swal.getTimerLeft() / 1000)/60)
+                strong.textContent = Math.floor((Swal.getTimerLeft() % 6e4)/1000)
+              }
             }
-          }
-        }, 100)
-    },
+          }, 100)
+      },
 
-    onClose: () => {
+      onClose: () => {
         clearInterval(timerInterval)
+        
       }
     }).then((result) => {
       /* Read more about handling dismissals below */
+      alertConfirm()
       if (result.dismiss === Swal.DismissReason.timer) {
         console.log('I was closed by the timer')
       }
     })
+}
 
+// Função que mostra o alert de confirmação
+function alertConfirm() {
+  Swal.fire({
+    title: 'Come on!',
+    imageUrl: '../assets/banner03.png',
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    background: `
+      #212723
+    `,
+    backdrop: `
+      #FFFFFF60
+    `,
+    confirmButtonText: `Begin`,
+    confirmButtonColor: `
+      #564fd1
+    `,
+  })
 }
