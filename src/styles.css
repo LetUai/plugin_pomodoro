@@ -103,6 +103,11 @@ span {
 }
 
 #start-stop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 39px;
   background: #564fd1;
@@ -110,6 +115,10 @@ span {
   color: #FFF;
   border: none;
   cursor: pointer;
+}
+
+#start-stop i, h3 {
+  margin: 0 5px;
 }
 
 #start-stop:hover {
