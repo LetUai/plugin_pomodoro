@@ -17,8 +17,8 @@ async function getLevel( time, level)
 
    switch(level){
       case 'flash': 
-      mim  = 10//1800;
-      pause = 10//300;
+      mim  = 1800;
+      pause = 300;
       break;
       case 'medium':
       mim = 2400;
