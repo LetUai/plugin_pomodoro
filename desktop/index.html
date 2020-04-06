@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title> Codelab Pomodoro </title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+
+    </head> 
+    <body>
+        <img class="banner" src="../assets/banner01.png"/>
+        <h1> Time: </h1>
+  
+        <div class="cards">
+            <div class="cards-items">
+                <div class="options">
+                    <input  type="radio" id="flash" name="flash" value="flash" onclick="Flash()">
+                    <h2>Flash</h2>
+                </div>
+                
+                <p>To study: <span>30m</span></p>
+                <p>Rest: <span>05m</span></p>
+            </div>
+            <div class="cards-items">
+                <div class="options">
+                    <input type="radio" id="medium" name="medium" value="medium" onclick="Medium()" >
+                    <h2>Medium</h2>
+                </div>
+                
+                <p>To study: <span>40m</span></p>
+                <p>Rest: <span>08m</span></p>
+            </div>
+            <div class="cards-items">
+                <div class="options">
+                    <input type="radio" id="hard" name="hard" value="hard" onclick="Hard()">
+                    <h2>Hard</h2>
+                </div>
+                
+                <p>To study: <span>60m</span></p>
+                <p>Rest: <span>10m</span></p>
+            </div>
+            
+        </div>
+
+        <div class="repeat">
+            <span>Repeat for</span>
+            <input id="choice" type="number" value="1" min="1"/>
+            <span>cycles</span>
+        </div>
+
+        <button id="start-stop" >
+            <i class="fas fa-play"></i>
+            <h3>Start</h3>
+        </button>
+        <script   type="text/javascript" src="cron.js"></script>
+    </body>
+</html>
+
